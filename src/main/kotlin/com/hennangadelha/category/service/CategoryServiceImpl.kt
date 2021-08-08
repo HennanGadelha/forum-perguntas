@@ -7,6 +7,10 @@ import javax.inject.Singleton
 @Singleton
 class CategoryServiceImpl(val categoryRepository: CategoryRepository) : CategoryService {
 
+    override fun findAll(): List<Category> {
+        return categoryRepository.findAll()
+    }
+
     override fun register(category: Category) {
         categoryRepository.save(category)
     }

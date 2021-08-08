@@ -7,7 +7,7 @@ interface CategoryService {
 
 //    fun findById(id: UUID): Optional<Category>
 //
-//    fun findAll(): List<Category>
+    fun findAll(): List<Category>
 
     fun register (category: Category)
 
