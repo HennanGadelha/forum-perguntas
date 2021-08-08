@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: foramperguntas
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/forum-perguntas
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 87499813
+    dialect: POSTGREES
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+        format_sql: true
