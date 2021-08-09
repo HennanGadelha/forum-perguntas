@@ -15,7 +15,7 @@ class ListAll(val categoryService: CategoryService, val categoryRepository: Cate
 
 
     @Get
-    fun listpage(pageable: Pageable): HttpResponse<Page<CategoryResponse>> {
+    fun findAll(pageable: Pageable): HttpResponse<Page<CategoryResponse>> {
 
         val categories = categoryService.findAll(pageable).map { CategoryResponse(it.name) }
 
