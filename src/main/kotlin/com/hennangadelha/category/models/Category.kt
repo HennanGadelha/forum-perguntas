@@ -7,13 +7,13 @@ import kotlin.collections.ArrayList
 
 @Entity
 class Category(
-    val name: String,
+    var name: String,
 ) {
 
     @Id
     @GeneratedValue
     val id: Long? = null
     val categoryUuid: UUID =  UUID.randomUUID()
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     val courses: List<Course> = ArrayList()
 }

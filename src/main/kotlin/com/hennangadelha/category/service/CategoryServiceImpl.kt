@@ -2,6 +2,8 @@ package com.hennangadelha.category.service
 
 import com.hennangadelha.category.models.Category
 import com.hennangadelha.category.models.repository.CategoryRepository
+import io.micronaut.data.model.Page
+import io.micronaut.data.model.Pageable
 import java.util.*
 import javax.inject.Singleton
 
@@ -14,8 +16,8 @@ class CategoryServiceImpl(val categoryRepository: CategoryRepository) : Category
         return category
     }
 
-    override fun findAll(): List<Category> {
-        return categoryRepository.findAll()
+    override fun findAll(pageable: Pageable): Page<Category> {
+        return categoryRepository.findAll(pageable)
     }
 
     override fun register(category: Category) {
@@ -24,5 +26,10 @@ class CategoryServiceImpl(val categoryRepository: CategoryRepository) : Category
 
     override fun delete(id: UUID) {
         categoryRepository.deleteByCategoryUuid(id)
+    }
+
+    override fun update(category: Category) {
+
+        categoryRepository.update(category)
     }
 }
